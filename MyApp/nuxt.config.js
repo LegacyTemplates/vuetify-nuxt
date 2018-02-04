@@ -15,6 +15,7 @@ module.exports = {
   modules: ['@nuxtjs/proxy'],
   proxy: {
     '/json': 'http://localhost:5000/',
+    '/auth': 'http://localhost:5000/',
   },
   css: ['~/assets/css/app.css'],
   /*
