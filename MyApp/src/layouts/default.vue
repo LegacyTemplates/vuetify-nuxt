@@ -57,12 +57,11 @@
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app style="justify-content:center">
-      <div style="text-align:center;margin:10px;">
+      <div style="text-align:center;margin:10px">
         <div>
             <img src="../static/img/logo.svg" height="32" style="vertical-align:middle;margin-right:5px;" />
             <a href="https://servicestack.net/vs-templates/vuetify-nuxt">Learn about this Nuxt.js Vuetify VS.NET template</a>
         </div>
-        <div>Copyright &copy; 2018</div>        
       </div>
     </v-footer>
   </v-app>
