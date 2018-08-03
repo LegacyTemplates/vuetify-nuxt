@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@servicestack/client": "^1.0.14",
-    "nuxt": "^1.4.1",
-    "vuetify": "^1.1.8"
+    "nuxt": "^1.4.2",
+    "vuetify": "^1.1.9"
   },
   "devDependencies": {
     "@nuxtjs/proxy": "^1.2.4",
