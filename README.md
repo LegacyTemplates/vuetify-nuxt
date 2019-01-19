@@ -6,9 +6,9 @@
 
 > Browse [source code](https://github.com/NetCoreTemplates/vuetify-nuxt), view live demo [vuetify-nuxt.web-templates.io](http://vuetify-nuxt.web-templates.io) and install with [dotnet-new](http://docs.servicestack.net/dotnet-new):
 
-    $ npm install -g @servicestack/cli
+    $ dotnet tool install -g web
 
-    $ dotnet-new vuetify-nuxt ProjectName
+    $ web new vuetify-nuxt ProjectName
 
 ## Description
 
