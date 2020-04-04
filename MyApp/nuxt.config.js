@@ -2,10 +2,10 @@ module.exports = {
   mode: 'spa',
   srcDir: 'src',
   generate: {
-    dir: 'wwwroot',    
+    dir: 'wwwroot',
     routes: [
       // Generate static pages for static file servers handling dynamic routes
-      ...[...Array(5).keys()].map(i => `/posts/${i+1}`) //= [/posts/1, /posts/2, /posts/3, /posts/4, /posts/5]
+      ...[...Array(5).keys()].map(i => `/posts/${i + 1}`) //= [/posts/1, /posts/2, /posts/3, /posts/4, /posts/5]
     ]
   },
   plugins: [
@@ -66,13 +66,17 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
