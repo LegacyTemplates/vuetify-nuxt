@@ -30,8 +30,14 @@ module.exports = {
   },
   modules: ['@nuxtjs/proxy'],
   proxy: {
-    '/json': 'http://localhost:5000/',
-    '/auth': 'http://localhost:5000/',
+    '/json': {
+      'target': 'https://localhost:5001/',
+      'secure': false
+    },
+    '/auth': {
+      'target': 'https://localhost:5001/',
+      'secure': false
+    },
   },
   css: ['~/assets/css/app.css'],
   /*
