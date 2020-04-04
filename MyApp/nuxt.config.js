@@ -2,20 +2,42 @@ module.exports = {
   mode: 'spa',
   srcDir: 'src',
   generate: {
-    dir: 'wwwroot',    
+    dir: 'wwwroot',
     routes: [
       // Generate static pages for static file servers handling dynamic routes
-      ...[...Array(5).keys()].map(i => `/posts/${i+1}`) //= [/posts/1, /posts/2, /posts/3, /posts/4, /posts/5]
+      ...[...Array(5).keys()].map(i => `/posts/${i + 1}`) //= [/posts/1, /posts/2, /posts/3, /posts/4, /posts/5]
     ]
   },
   plugins: [
-    '~/plugins/vuetify.js',
     { src: '~/plugins/nuxt-client-init.js', ssr: false }
   ],
+  buildModules: [
+    ['@nuxtjs/vuetify'],
+  ],
+  /*
+   ** Vuetify module configuration
+   ** See https://github.com/nuxt-community/vuetify-module#optionspath
+   */
+  vuetify: {
+    icons: {
+      iconfont: 'mdi'
+    },
+    rtl: false,
+    theme: {
+      light: true
+    },
+    treeShake: true
+  },
   modules: ['@nuxtjs/proxy'],
   proxy: {
-    '/json': 'http://localhost:5000/',
-    '/auth': 'http://localhost:5000/',
+    '/json': {
+      'target': 'https://localhost:5001/',
+      'secure': false
+    },
+    '/auth': {
+      'target': 'https://localhost:5001/',
+      'secure': false
+    },
   },
   css: ['~/assets/css/app.css'],
   /*
@@ -30,7 +52,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' }
     ]
   },
   /*
@@ -41,20 +63,20 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
-    extractCSS: true,
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }

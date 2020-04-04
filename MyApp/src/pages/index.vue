@@ -1,56 +1,45 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex
-      fluid
-      style="min-height: 0;text-align:center"
-      grid-list-lg
-    >
-      <v-card>
-        <v-card-title primary-title style="justify-content:center">
-            <div>
-                <app-logo/>
+  <v-row class="d-flex flex-columnt" align="center" justify="center">
+    <v-card>
+      <v-card-title primary-title>
+        <div class="text-center">
+          <div class="text-center">
+            <app-logo />
+          </div>
 
-                <h3 class="headline mb-0">ServiceStack + Nuxt.js + Vuetify</h3>
+          <h3 class="headline mb-0">ServiceStack + Nuxt.js + Vuetify</h3>
 
-                <v-form>
-                    <v-text-field
-                        label="Name"
-                        v-model="name"
-                        :counter="30"
-                        required
-                    ></v-text-field>
-                </v-form>
+          <v-form>
+            <v-text-field label="Name" v-model="name" :counter="30" required></v-text-field>
+          </v-form>
 
-                <h3 class="result">{{result}}</h3>
-            </div>                  
-        </v-card-title>
-      </v-card>
-    </v-flex>
-  </v-layout>
+          <h3 class="result">{{result}}</h3>
+        </div>
+      </v-card-title>
+    </v-card>
+  </v-row>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from "~/components/AppLogo.vue";
 import { hello } from "~/shared/gateway";
 
 export default {
   components: {
     AppLogo
   },
-  
-  data: () => ({ 
-    name: '',
-    result: ' '
+
+  data: () => ({
+    name: "",
+    result: " "
   }),
 
   watch: {
     name: async function(newName) {
-      this.result = newName
-        ? await hello(newName)
-        : '';
+      this.result = newName ? await hello(newName) : "";
     }
   }
-}
+};
 </script>
 
 <style>
@@ -63,7 +52,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -80,7 +70,7 @@ export default {
 }
 
 .result {
-    height: 30px;
-    line-height: 30px;
+  height: 30px;
+  line-height: 30px;
 }
 </style>
