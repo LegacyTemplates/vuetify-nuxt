@@ -9,9 +9,25 @@ module.exports = {
     ]
   },
   plugins: [
-    '~/plugins/vuetify.js',
     { src: '~/plugins/nuxt-client-init.js', ssr: false }
   ],
+  buildModules: [
+    ['@nuxtjs/vuetify'],
+  ],
+  /*
+   ** Vuetify module configuration
+   ** See https://github.com/nuxt-community/vuetify-module#optionspath
+   */
+  vuetify: {
+    icons: {
+      iconfont: 'mdi'
+    },
+    rtl: false,
+    theme: {
+      light: true
+    },
+    treeShake: true
+  },
   modules: ['@nuxtjs/proxy'],
   proxy: {
     '/json': 'http://localhost:5000/',
@@ -30,7 +46,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' }
     ]
   },
   /*
@@ -41,10 +57,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
-    extractCSS: true,
     /*
     ** Run ESLint on save
     */
