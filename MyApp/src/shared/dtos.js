@@ -1,11 +1,11 @@
 /* Options:
-Date: 2018-03-25 03:25:30
-Version: 5.03
+Date: 2020-06-13 22:04:35
+Version: 5.91
 Tip: To override a DTO option, remove "//" prefix before updating
-BaseUrl: http://localhost:5000
+BaseUrl: https://localhost:5001
 
 //GlobalNamespace:
-//MakePropertiesOptional: True
+//MakePropertiesOptional: False
 //AddServiceStackTypes: True
 //AddResponseStatus: False
 //AddImplicitVersion:
@@ -15,19 +15,22 @@ BaseUrl: http://localhost:5000
 //DefaultImports:
 */
 var HelloResponse = /** @class */ (function () {
-    function HelloResponse() {
+    function HelloResponse(init) {
+        Object.assign(this, init);
     }
     return HelloResponse;
 }());
 export { HelloResponse };
 var GetLinksResponse = /** @class */ (function () {
-    function GetLinksResponse() {
+    function GetLinksResponse(init) {
+        Object.assign(this, init);
     }
     return GetLinksResponse;
 }());
 export { GetLinksResponse };
 var GetPostResponse = /** @class */ (function () {
-    function GetPostResponse() {
+    function GetPostResponse(init) {
+        Object.assign(this, init);
     }
     return GetPostResponse;
 }());
@@ -35,28 +38,31 @@ export { GetPostResponse };
 // @Route("/hello")
 // @Route("/hello/{Name}")
 var Hello = /** @class */ (function () {
-    function Hello() {
+    function Hello(init) {
+        Object.assign(this, init);
     }
     Hello.prototype.createResponse = function () { return new HelloResponse(); };
-    Hello.prototype.getTypeName = function () { return "Hello"; };
+    Hello.prototype.getTypeName = function () { return 'Hello'; };
     return Hello;
 }());
 export { Hello };
 // @Route("/links")
 var GetLinks = /** @class */ (function () {
-    function GetLinks() {
+    function GetLinks(init) {
+        Object.assign(this, init);
     }
     GetLinks.prototype.createResponse = function () { return new GetLinksResponse(); };
-    GetLinks.prototype.getTypeName = function () { return "GetLinks"; };
+    GetLinks.prototype.getTypeName = function () { return 'GetLinks'; };
     return GetLinks;
 }());
 export { GetLinks };
 // @Route("/posts")
 var GetPost = /** @class */ (function () {
-    function GetPost() {
+    function GetPost(init) {
+        Object.assign(this, init);
     }
     GetPost.prototype.createResponse = function () { return new GetPostResponse(); };
-    GetPost.prototype.getTypeName = function () { return "GetPost"; };
+    GetPost.prototype.getTypeName = function () { return 'GetPost'; };
     return GetPost;
 }());
 export { GetPost };
