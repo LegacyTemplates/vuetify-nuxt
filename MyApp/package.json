@@ -14,20 +14,20 @@
   },
   "dependencies": {
     "@servicestack/client": "^1.0.32",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.14.5"
   },
   "devDependencies": {
-    "@nuxtjs/proxy": "^2.0.0",
+    "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/vuetify": "^1.11.2",
     "@servicestack/cli": "^1.0.10",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
+    "eslint": "^7.9.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^6.2.2",
     "gulp": "^4.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "postcss-cssnext": "^3.1.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
