@@ -1,6 +1,6 @@
 # vuetify-nuxt
 
-.NET Core 3.1 Vuetify Nuxt.js App Template
+.NET Core 5.0 Vuetify Nuxt.js App Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vuetify-nuxt.png)](http://vuetify-nuxt.web-templates.io/)
 
@@ -63,4 +63,4 @@ To create a release client and server build of your App run:
 
     $ npm run publish
 
-Which will publish your App to `bin/Release/netcoreapp3.1/publish` which you can deploy as a standard .NET Core App.
+Which will publish your App to `bin/Release/net5/publish` which you can deploy as a standard .NET Core App.
