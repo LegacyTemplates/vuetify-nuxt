@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@servicestack/client": "^1.0.32",
+    "@servicestack/client": "^1.0.51",
     "nuxt": "^2.14.5"
   },
   "devDependencies": {
