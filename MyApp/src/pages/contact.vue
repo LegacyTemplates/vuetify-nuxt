@@ -1,30 +1,23 @@
 <template>
   <v-row class="d-flex flex-column" align="center" justify="center">
-    <v-col cols="12" md="4">
+    <v-col cols="12" sm="8" md="6">
       <v-card>
         <v-card-title primary-title>
           <div>
-            <v-row>
-              <v-col cols="12" md="8">
-                <h1>Contact</h1>
-
-                <h3>ServiceStack Links</h3>
-
-                <ul>
-                  <li v-for="(url, name) in links" :key="name">
-                    <a :href="url">{{name}}</a>
-                  </li>
-                </ul>
-              </v-col>
-
-              <v-col cols="12" md="4">
-                <a href="https://vuetifyjs.com" target="_blank">
-                  <img src="../static/img/v.png" alt="Vuetify.js" />
-                </a>
-              </v-col>
-            </v-row>
+            <h1>Contact</h1>
+            <h3>ServiceStack Links</h3>
           </div>
+          <a href="https://vuetifyjs.com" target="_blank">
+            <img src="../static/img/v.png" alt="Vuetify.js" style="max-height:80px;" />
+          </a>
         </v-card-title>
+        <v-card-text>
+          <ul>
+            <li v-for="(url, name) in links" :key="name">
+              <a :href="url">{{name}}</a>
+            </li>
+          </ul>
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>

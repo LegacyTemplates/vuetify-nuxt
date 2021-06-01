@@ -4,7 +4,7 @@
       <v-card-title primary-title>
         <div class="text-center">
           <div class="text-center">
-            <app-logo />
+            <logo />
           </div>
 
           <h3 class="headline mb-0">ServiceStack + Nuxt.js + Vuetify</h3>
@@ -21,14 +21,9 @@
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
 import { hello } from "~/shared/gateway";
 
 export default {
-  components: {
-    AppLogo
-  },
-
   data: () => ({
     name: "",
     result: " "

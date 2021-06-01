@@ -1,18 +1,16 @@
 <template>
   <v-row class="d-flex flex-column" align="center" justify="center">
-    <v-col cols="12" md="4">
-      <v-card width="630px">
-        <v-card-title primary-title>
-          <div>
-            <div class="text-center">
-              <app-logo />
-
-              <h1>NUXT</h1>
-
-              <h2>Vue.js Web Apps</h2>
-            </div>
-
-            <p class="mt-5">
+    <v-col cols="12" sm="8" md="6">
+      <div class="text-center">
+        <logo />
+        <vuetify-logo />
+      </div>
+      <v-card>
+        <v-card-title class="headline">
+          Welcome to Vuetify + Nuxt.js template
+        </v-card-title>
+        <v-card-text>
+            <p>
               Nuxt is an opinionated structured framework for rapidly developing Web Applications utilizing developer-friendly
               <a
                 href="https://vuejs.org/v2/guide/single-file-components.html"
@@ -24,38 +22,32 @@
               automatic code spliting, link prefetching, SPA navigation of statically-generated cacheable assets
               and integrated support for ES6/7 transpilation and js/css bundling and minification.
             </p>
-
-            <div class="text-center">
-              <v-btn
-                href="https://nuxtjs.org/guide/installation"
-                target="_blank"
-                color="green"
-                dark
-                large
-              >get started</v-btn>
-
-              <v-btn
+        </v-card-text>
+        <v-card-actions>
+            <v-spacer/>
+            <v-btn
                 dark
                 large
                 href="https://github.com/nuxt/nuxt.js"
                 target="_blank"
                 color="grey"
               >GitHub</v-btn>
-            </div>
-          </div>
-        </v-card-title>
+            <v-btn
+                href="https://nuxtjs.org/guide/installation"
+                target="_blank"
+                color="green"
+                dark
+                large
+              >Get Started</v-btn>
+              <v-spacer/>
+        </v-card-actions>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-
 export default {
-  components: {
-    AppLogo
-  }
 };
 </script>
 

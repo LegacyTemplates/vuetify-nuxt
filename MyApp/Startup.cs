@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -8,12 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Funq;
 using ServiceStack;
 using ServiceStack.Configuration;
-using MyApp.ServiceInterface;
 using ServiceStack.Script;
 using ServiceStack.Web;
-using System;
 using ServiceStack.Text;
 using ServiceStack.Logging;
+using ServiceStack.NativeTypes.TypeScript;
+using MyApp.ServiceInterface;
 
 namespace MyApp
 {
@@ -57,6 +58,9 @@ namespace MyApp
                 AddRedirectParamsToQueryString = true,
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), HostingEnvironment.IsDevelopment()),
             });
+
+            TypeScriptGenerator.InsertTsNoCheck = true;
+            TypeScriptGenerator.UseNullableProperties = true;
         }
     }
 }

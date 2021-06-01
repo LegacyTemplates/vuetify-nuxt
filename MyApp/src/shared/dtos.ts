@@ -1,6 +1,6 @@
 /* Options:
-Date: 2020-09-14 17:43:31
-Version: 5.93
+Date: 2021-06-01 15:00:24
+Version: 5.111
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
@@ -15,6 +15,7 @@ BaseUrl: https://localhost:5001
 //DefaultImports: 
 */
 
+// @ts-nocheck
 
 export interface IReturn<T>
 {
@@ -28,23 +29,23 @@ export interface IReturnVoid
 
 export class HelloResponse
 {
-    public result: string;
+    public result: string|null;
 
     public constructor(init?: Partial<HelloResponse>) { (Object as any).assign(this, init); }
 }
 
 export class GetLinksResponse
 {
-    public results: { [index: string]: string; };
+    public results: { [index: string]: string; }|null;
 
     public constructor(init?: Partial<GetLinksResponse>) { (Object as any).assign(this, init); }
 }
 
 export class GetPostResponse
 {
-    public id: number;
-    public title: string;
-    public description: string;
+    public id: number|null;
+    public title: string|null;
+    public description: string|null;
 
     public constructor(init?: Partial<GetPostResponse>) { (Object as any).assign(this, init); }
 }
@@ -53,7 +54,7 @@ export class GetPostResponse
 // @Route("/hello/{Name}")
 export class Hello implements IReturn<HelloResponse>
 {
-    public name: string;
+    public name: string|null;
 
     public constructor(init?: Partial<Hello>) { (Object as any).assign(this, init); }
     public createResponse() { return new HelloResponse(); }
@@ -72,7 +73,7 @@ export class GetLinks implements IReturn<GetLinksResponse>
 // @Route("/posts")
 export class GetPost implements IReturn<GetPostResponse>
 {
-    public id: number;
+    public id: number|null;
 
     public constructor(init?: Partial<GetPost>) { (Object as any).assign(this, init); }
     public createResponse() { return new GetPostResponse(); }
