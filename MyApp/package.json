@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@servicestack/client": "^1.0.54",
+    "@servicestack/client": "^1.0.57",
     "core-js": "^3.13.1",
     "nuxt": "^2.15.6"
   },

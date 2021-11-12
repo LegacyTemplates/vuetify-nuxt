@@ -1,6 +1,6 @@
 # vuetify-nuxt
 
-.NET 5.0 Vuetify Nuxt.js App Template
+.NET 6.0 Vuetify Nuxt.js App Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vuetify-nuxt.png)](http://vuetify-nuxt.web-templates.io/)
 

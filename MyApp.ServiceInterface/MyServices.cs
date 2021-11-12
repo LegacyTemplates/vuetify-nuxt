@@ -22,7 +22,7 @@ namespace MyApp.ServiceInterface
                 {"Issue Tracker", "https://github.com/ServiceStack/Issues"},
                 {"StackOverflow", "http://stackoverflow.com/search?q=servicestack"},
                 {"Feature Requests", "http://servicestack.uservoice.com/forums/176786-feature-requests"},
-                {".NET 5 Live Demos", "https://github.com/NetCoreApps/LiveDemos"},
+                {".NET 6 Live Demos", "https://github.com/NetCoreApps/LiveDemos"},
                 {".NET Framework Demos", "https://github.com/ServiceStackApps/LiveDemos"},
                 {"Instant Client Apps", "https://apps.servicestack.net"},
                 {"What's New", "https://servicestack.net/whatsnew"},
