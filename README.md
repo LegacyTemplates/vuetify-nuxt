@@ -1,6 +1,6 @@
 # vuetify-nuxt
 
-.NET 6.0 Vuetify Nuxt.js App Template
+.NET 8.0 Vuetify Nuxt.js App Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/vuetify-nuxt.png)](http://vuetify-nuxt.web-templates.io/)
 
@@ -8,13 +8,13 @@
 
     $ dotnet tool install -g x
 
-    $ x new vuetify-nuxt ProjectName
+    $ x new LegacyTemplates/vuetify-nuxt ProjectName
 
 Alternatively write new project files directly into an empty repository, using the Directory Name as the ProjectName:
 
     $ git clone https://github.com/<User>/<ProjectName>.git
     $ cd <ProjectName>
-    $ x new vuetify-nuxt
+    $ x new LegacyTemplates/vuetify-nuxt
 
 ## Description
 
